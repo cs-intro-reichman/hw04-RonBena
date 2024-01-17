@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class StringOps {
     ////////////////////////////////////////////////////////////
     //////                                               ///////
@@ -22,17 +24,27 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String[] testCases = {
-            "Hello World",
-            "HELLO world",
-            " tWo     wordS",
-            "world",
-            "   Intro to  coMPUter   	sCIEncE   ",
-            // Add more test cases as needed
-    };
-
-    String result = StringOps.camelCase(testCases[4]);
-    System.out.println(result);
+        String[] strings = {
+                "Hello world",
+                "Hello worLd",
+                "Hello world",
+                "Hello world",
+                "MMMM",
+                // Add more test cases as needed
+        };
+        char[] characters = {'l', 'l', 'o', ' ', 'M', 'M'};
+    
+        int[][] expectedResults = {
+                {2, 3, 9},
+                {2, 3},
+                {4, 7},
+                {5},
+                {0, 1, 2, 3}
+        };
+    
+        int[] result = StringOps.allIndexOf(strings[1], characters[1]);
+    
+        System.out.println(Arrays.toString(result));
     };
 
     public static String capVowelsLowRest (String string) {
@@ -112,7 +124,25 @@ public class StringOps {
     
 
     public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+        
+        int count = 0;
+
+        for(int i = 0; i < string.length(); i++)
+        {
+            if(string.charAt(i)==chr)
+            count++;
+        }
+        int [] arr = new int [count];
+        int spot=0;
+        for(int i = 0; i < string.length(); i++)
+        {
+            if(string.charAt(i)==chr)
+            {
+            arr [spot]=i;
+            spot++;
+            }
+        }
+
+        return arr;
     }
 }
