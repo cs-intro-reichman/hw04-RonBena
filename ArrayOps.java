@@ -7,6 +7,17 @@ public class ArrayOps {
          System.err.println(secondMaxValue(array2));
                   System.err.println(containsTheSameElements(new int[] {1, 2, 3}, new int[] {1, 2, 3}));
                   System.out.println(isSorted(new int[] {3,2,1}));
+
+            //       int[][] testCases = {
+            //         {1, 2, 3, 4, 5},
+            //         {2, 8, 3, 7, 8},
+            //         {1, -2, 3, -4, 5},
+            //         {-202, 48, 13, 7, 8},
+            //         // Add more test cases as needed
+            // };
+    
+            // int result = ArrayOps.secondMaxValue(testCases[inputNumber - 1]);
+            // System.out.println(result);
     }
     
     public static int findMissingInt (int [] array) {
@@ -47,10 +58,12 @@ public class ArrayOps {
     }
         if(count>1)
         numexist=true;
+        else
+        numexist=false;
 
         return numexist;
     }
-}
+
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
         boolean contains1=false;
         boolean contains2=false;
