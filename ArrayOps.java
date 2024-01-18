@@ -32,9 +32,25 @@ public class ArrayOps {
                 secondmax = array[i];
             }
         }
+        if(towbignum(array,max))
+        return max;
+        else
         return secondmax;
     }
+    public static boolean towbignum(int array[],int max) {
+        boolean numexist=false;
+        int count=0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == max) {
+                count++;
+        }
+    }
+        if(count>1)
+        numexist=true;
 
+        return numexist;
+    }
+}
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
         boolean contains1=false;
         boolean contains2=false;
